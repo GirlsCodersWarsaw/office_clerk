@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
   has_one :basket , :as => :kori , :autosave => true , :dependent => :destroy
+  has_many :payments
 
   store :address, accessors: [ :name , :street , :city , :phone ] #, coder: JSON
 
